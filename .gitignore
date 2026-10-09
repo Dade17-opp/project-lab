@@ -1,0 +1,32 @@
+# Build output
+build/
+cmake-build-*/
+out/
+dist/
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.elf
+*.bin
+*.hex
+
+# IDE and local environment
+.vscode/
+.idea/
+.venv/
+venv/
+__pycache__/
+.DS_Store
+Thumbs.db
+
+# Local captures, firmware dumps, and sensitive material
+*.pcap
+*.pcapng
+*.dump
+*.key
+*.pem
+.env
+.env.*
+!.env.example
