@@ -1,29 +1,38 @@
 # Project Lab
 
-Taccuino tecnico per idee, prototipi e progetti in corso nell'ambito della **Cyber-Physical Security** e dell'ingegneria dei sistemi. Ogni progetto ha una cartella autonoma con playbook, obiettivi, piano di validazione e spazio per documentare risultati e decisioni.
+An engineering portfolio focused on **Cyber-Physical Security**, embedded systems, and Linux security tooling. This repository collects project plans and, as they develop, implementations, experiments, and measured results.
 
-## Progetti
+> **Current status:** the projects listed below are planned. Their playbooks define technical study and implementation paths; they are not claims of completed work or validated results.
 
-| Progetto | Ambito | Stato |
+## Projects
+
+| Project | Focus | Current stage |
 |---|---|---|
-| [Automotive CAN-Bus Monitor & IDS](projects/automotive-can-bus-monitor-ids/PROJECT_PLAYBOOK.md) | CAN, C/C++, ESP32/Linux vcan, rilevamento anomalie | Pianificato |
-| [IoT Hardware Security & Firmware Auditing Station](projects/iot-hardware-firmware-auditing/PROJECT_PLAYBOOK.md) | UART, SPI flash, firmware, reverse engineering | Pianificato |
-| [Linux Packet Sniffer & Host-IDS](projects/linux-packet-sniffer-host-ids/PROJECT_PLAYBOOK.md) | AF_PACKET, eBPF, C++20, telemetria host | Pianificato |
+| [Automotive CAN-Bus Monitor & IDS](projects/automotive-can-bus-monitor-ids/PROJECT_PLAYBOOK.md) | C/C++, Linux SocketCAN/`vcan`, ESP32 TWAI, anomaly detection | Planning |
+| [IoT Hardware Security & Firmware Auditing Station](projects/iot-hardware-firmware-auditing/PROJECT_PLAYBOOK.md) | UART, SPI flash acquisition, Binwalk, firmware analysis | Planning |
+| [Linux Packet Sniffer & Host-IDS](projects/linux-packet-sniffer-host-ids/PROJECT_PLAYBOOK.md) | C++20, Linux `AF_PACKET`, eBPF, packet analysis | Planning |
 
-## Come usare questo repository
+## Repository structure
 
-1. Scegli un progetto dal [backlog](BACKLOG.md) e aggiorna il suo stato quando inizi.
-2. Segui il playbook come piano di studio e sviluppo; registra ipotesi, risultati, misure e problemi incontrati.
-3. Mantieni riproducibili setup e test. Non inserire credenziali, dump di terzi o dati personali.
-4. Aggiungi una nuova cartella sotto `projects/` per ogni nuova idea, con un `PROJECT_PLAYBOOK.md` e una breve sezione nel backlog.
+```text
+project-lab/
+├── BACKLOG.md
+└── projects/
+    ├── automotive-can-bus-monitor-ids/
+    ├── iot-hardware-firmware-auditing/
+    └── linux-packet-sniffer-host-ids/
+```
 
-## Principi di lavoro
+Each project directory contains a `PROJECT_PLAYBOOK.md` organized around system fundamentals, lab setup, architecture, implementation sequence, and validation. As work progresses, it can also include source code, test fixtures, diagrams, and experiment notes.
 
-- **Sicurezza e autorizzazione:** test solo su hardware proprio, reti isolate o sistemi per cui si dispone di autorizzazione esplicita.
-- **Misure prima delle affermazioni:** pubblicare risultati con ambiente, metodo, limiti e dati riproducibili.
-- **Progressione didattica:** iniziare con simulatori e banchi controllati; passare all'hardware reale solo dopo aver compreso i limiti elettrici e i rischi.
-- **Portfolio trasparente:** distinguere chiaramente attività pianificate, prototipi e risultati effettivamente verificati.
+## Engineering approach
 
-## Convenzioni
+- Start with isolated simulations and lab equipment; use only systems and devices owned by me or explicitly authorized for testing.
+- Prefer small, reproducible experiments and explainable detection logic.
+- Record the environment, method, measurements, and limitations alongside results.
+- Keep credentials, personal data, and sensitive firmware or packet captures out of the repository.
+- Mark project stages honestly so plans, prototypes, and verified results are easy to distinguish.
 
-Cartelle progetto in `kebab-case`; documentazione primaria in Markdown; codice, schemi e dati di test separati e accompagnati da istruzioni di riproduzione. Usare licenze appropriate prima di riutilizzare codice o pubblicare contributi di terzi.
+## Languages
+
+This overview and the roadmap are in English. The detailed technical playbooks are currently in Italian. Implementation languages and tools are selected per project and documented in each playbook.
